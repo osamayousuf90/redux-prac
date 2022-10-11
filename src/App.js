@@ -31,7 +31,7 @@ function App() {
     } else if (myRef === 2) {
       ref3.current.focus()
     } else if (myRef === 3) {
-      ref4.current.focus()
+      ref4.current.focus()  
     } 
     console.log("ans ====>", ans)
   }
@@ -41,17 +41,16 @@ function App() {
   const back = (e , res) => {
    
     if (e.key === "Backspace") {
-      ref4.current.value = "" 
       if (res === 4) { 
         ref4.current.value = "" 
         ref3.current.focus()
       } else if (res === 3) {
           ref4.current.value = "" 
         ref2.current.focus()
-        // ref2.current.value = ""
+        ref2.current.value = ""
        }else if (res === 2) {
         ref1.current.focus()
-        // ref1.current.value = ""
+        ref1.current.value = ""
        }
     }
 
@@ -61,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <OTPInput
+      {/* <OTPInput
       value={OTP}
       onChange={setOTP}
       autoFocus
@@ -70,11 +69,11 @@ function App() {
       disabled={false}
       secure
     />
-    <ResendOTP handelResendClick={() => console.log("Resend clicked")} />
-      {/* <input maxLength={1} onKeyDown={(e) => back(e , 1)} onChange={(e) => a(1,e)} ref={ref1} className="box"></input>
-      <input maxLength={1} onKeyDown={(e) => back(e , 2)} onChange={(e) => a(2,e)} ref={ref2}  className="box"></input>
-      <input maxLength={1} onKeyDown={(e) => back(e , 3)} onChange={(e) => a(3,e)} ref={ref3} className="box"></input>
-      <input maxLength={1} onKeyDown={(e) => back(e , 4)} onChange={(e) => a(4, e)} ref={ref4} className="box"></input>   */}
+    <ResendOTP handelResendClick={() => console.log("Resend clicked")} /> */}
+        <input maxLength={1}  onKeyDown={(e) => back(e , 1)} onChange={(e) => a(1,e)} ref={ref1} className="box"></input>
+        <input maxLength={1} onKeyDown={(e) => back(e , 2)} onChange={(e) => a(2,e)} ref={ref2}  className="box"></input>
+        <input maxLength={1} onKeyDown={(e) => back(e , 3)} onChange={(e) => a(3,e)} ref={ref3} className="box"></input>
+        <input maxLength={1} onKeyDown={(e) => back(e , 4)} onChange={(e) => a(4, e)} ref={ref4} className="box"></input>  
     </div>
   );
 }
